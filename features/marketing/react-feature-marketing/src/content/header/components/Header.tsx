@@ -1,3 +1,4 @@
+'use client';
 import { DefaultHeaderLayout } from '@/content/header/default-header-layout';
 import { Header as HeaderItem } from '@/content/header/header';
 import { cn } from '@/shared/utils';

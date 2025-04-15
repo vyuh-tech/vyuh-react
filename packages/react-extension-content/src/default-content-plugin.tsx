@@ -18,8 +18,8 @@ import React from 'react';
  */
 export class DefaultContentPlugin extends ContentPlugin {
   private extensionBuilder?: ContentExtensionBuilder;
-  constructor(provider: ContentProvider) {
-    super('vyuh.plugin.content.default', 'Default Content Plugin', provider);
+  constructor() {
+    super('vyuh.plugin.content.default', 'Default Content Plugin', {});
   }
 
   getItem<T extends SchemaItem>(
@@ -43,8 +43,10 @@ export class DefaultContentPlugin extends ContentPlugin {
     json: Record<string, any> | ContentItem,
     options?: { layout: LayoutConfiguration },
   ): React.ReactNode {
-    const schemaType = json.schemaType ?? this.provider.schemaType(json);
-
+    console.log(json);
+    const schemaType = json.schemaType ?? 'ContentBuilder';
+    console.log('>@@@@');
+    console.log(json);
     // Wrap the renderer in an error boundary to isolate rendering errors
     return (
       <ErrorBoundary title={`Failed to render: ${schemaType}`}>
@@ -78,12 +80,12 @@ export class DefaultContentPlugin extends ContentPlugin {
 
   async dispose(): Promise<void> {
     // Dispose the content provider
-    return this.provider.dispose();
+    // return this.provider.dispose();
   }
 
   async init(): Promise<void> {
     // Initialize the content provider
-    return this.provider.init();
+    // return this.provider.init();
   }
 }
 

@@ -1,8 +1,6 @@
 import { Accordion as AccordionItem } from '@/content/Accordion/accordion';
 import { DefaultAccordionLayout } from '@/content/Accordion/default-accordion-layout';
-import { cn } from '@/shared/utils';
-import { executeAction } from '@vyuh/react-core';
-import React, { useState } from 'react';
+import React from 'react';
 
 interface AccordionProps {
   content: AccordionItem;

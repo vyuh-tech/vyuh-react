@@ -6,11 +6,11 @@ import { misc } from '@/features/misc-feature';
 import { NextNavigationPlugin } from '@/plugins/next-navigation-plugin';
 import { PluginDescriptor, VyuhProvider } from '@vyuh/react-core';
 import { DefaultContentPlugin } from '@vyuh/react-extension-content';
+import { system } from '@vyuh/react-feature-system';
 import { auth } from '@vyuh/react-feature-auth';
 import { blog } from '@vyuh/react-feature-blog';
 import { marketing } from '@vyuh/react-feature-marketing';
 
-import { system } from '@vyuh/react-feature-system';
 import { SanityContentProvider } from '@vyuh/react-plugin-content-provider-sanity';
 import { ReactNode } from 'react';
 
@@ -25,7 +25,7 @@ const sanityProvider = new SanityContentProvider({
 });
 
 const plugins = new PluginDescriptor({
-  content: new DefaultContentPlugin(sanityProvider),
+  content: new DefaultContentPlugin(),
   navigation: new NextNavigationPlugin(),
 });
 

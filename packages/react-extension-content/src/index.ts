@@ -1,5 +1,6 @@
 export * from './ui/document-loader';
 export * from './ui/route-loader';
+export * from './ui/route-loader-next';
 export * from './ui/async-content-container';
 
 export * from './content-builder';

@@ -1,3 +1,4 @@
+'use client';
 import { DefaultPricingLayout } from '@/content/pricing/default-pricing-layout';
 import { Pricing as PricingContent } from '@/content/pricing/pricing';
 import { Section } from '@/shared/components/Section';
