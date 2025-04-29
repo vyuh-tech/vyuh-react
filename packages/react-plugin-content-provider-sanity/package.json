@@ -1,6 +1,6 @@
 {
   "name": "@vyuh/react-plugin-content-provider-sanity",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Vyuh React Content Provider Sanity Plugin",
   "type": "module",
   "scripts": {
@@ -36,7 +36,7 @@
     "@sanity/image-url": "^1.1.0",
     "@sanity/sdk": "0.0.0-rc.3",
     "@sanity/sdk-react": "0.0.0-rc.3",
-    "@vyuh/react-core": "^0.5.3",
+    "@vyuh/react-core": "^0.5.4",
     "next-sanity": "^9.10.2",
     "rxjs": "^7.8.2"
   },

@@ -1,5 +1,13 @@
 # @vyuh/react-extension-content
 
+## 0.5.4
+
+### Patch Changes
+
+- package updates and fixing the event plugin
+- Updated dependencies
+  - @vyuh/react-core@0.5.4
+
 ## 0.5.3
 
 ### Patch Changes

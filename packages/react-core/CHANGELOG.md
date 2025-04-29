@@ -1,5 +1,11 @@
 # @vyuh/react-core
 
+## 0.5.4
+
+### Patch Changes
+
+- package updates and fixing the event plugin
+
 ## 0.5.3
 
 ## 0.5.2

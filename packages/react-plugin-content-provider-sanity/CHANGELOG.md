@@ -1,5 +1,13 @@
 # @vyuh/react-plugin-content-provider-sanity
 
+## 0.5.4
+
+### Patch Changes
+
+- package updates and fixing the event plugin
+- Updated dependencies
+  - @vyuh/react-core@0.5.4
+
 ## 0.5.3
 
 ### Patch Changes
