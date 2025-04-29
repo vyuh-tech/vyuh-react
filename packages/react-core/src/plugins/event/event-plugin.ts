@@ -35,7 +35,7 @@ export class VyuhEvent<T = any> {
 /**
  * A function that handles events of type T
  */
-export type EventListener<T extends VyuhEvent = VyuhEvent> = (event: T) => void;
+export type EventListener = (event: VyuhEvent) => void;
 
 /**
  * A function that can be called to dispose of (cancel) an event subscription
@@ -52,22 +52,24 @@ export abstract class EventPlugin extends Plugin {
   /**
    * Subscribe to events of type T
    *
+   * @param name The name of the event
    * @param listener The function to call when an event is emitted
    * @returns A dispose function that can be called to cancel the subscription
    */
-  abstract on<T extends VyuhEvent>(listener: EventListener<T>): DisposeFunction;
+  abstract on(name: string, listener: EventListener): DisposeFunction;
 
   /**
    * Subscribe to a single occurrence of an event of type T
    *
+   * @param name The name of the event
    * @param listener The function to call when an event is emitted
    */
-  abstract once<T extends VyuhEvent>(listener: EventListener<T>): void;
+  abstract once(name: string, listener: EventListener): void;
 
   /**
    * Emit an event to all subscribers
    *
    * @param event The event to emit
    */
-  abstract emit<T extends VyuhEvent>(event: T): void;
+  abstract emit(event: VyuhEvent): void;
 }

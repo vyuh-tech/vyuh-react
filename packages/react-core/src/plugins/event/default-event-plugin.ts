@@ -1,10 +1,15 @@
-import { DisposeFunction, EventListener, EventPlugin, VyuhEvent } from '@/plugins/event/event-plugin';
+import {
+  DisposeFunction,
+  EventListener,
+  EventPlugin,
+  VyuhEvent,
+} from '@/plugins/event/event-plugin';
 
 /**
  * Default implementation of EventPlugin
  */
 export class DefaultEventPlugin extends EventPlugin {
-  private eventListeners: Map<string, Set<EventListener<any>>> = new Map();
+  private eventListeners: Map<string, Set<EventListener>> = new Map();
 
   constructor() {
     super(
@@ -27,9 +32,9 @@ export class DefaultEventPlugin extends EventPlugin {
   /**
    * Subscribe to events of a specific type
    */
-  on<T extends VyuhEvent>(listener: EventListener<T>): DisposeFunction {
+  on(name: string, listener: EventListener): DisposeFunction {
     // We use the constructor name as the event type
-    const eventType = this.getEventType<T>();
+    const eventType = name;
 
     if (!this.eventListeners.has(eventType)) {
       this.eventListeners.set(eventType, new Set());
@@ -53,8 +58,10 @@ export class DefaultEventPlugin extends EventPlugin {
   /**
    * Subscribe to a single occurrence of an event
    */
-  once<T extends VyuhEvent>(listener: EventListener<T>): void {
-    const dispose = this.on<T>((event: T) => {
+  once(name: string, listener: EventListener): void {
+    let dispose: DisposeFunction;
+
+    dispose = this.on(name, (event) => {
       // Call the listener
       listener(event);
 
@@ -66,14 +73,14 @@ export class DefaultEventPlugin extends EventPlugin {
   /**
    * Emit an event to all subscribers
    */
-  emit<T extends VyuhEvent>(event: T): void {
+  emit(event: VyuhEvent): void {
     // If no timestamp is provided, add one
     if (!event.timestamp) {
       (event as any).timestamp = new Date();
     }
 
     // Get event type from the event's constructor
-    const eventType = this.getEventTypeFromEvent(event);
+    const eventType = event.name;
 
     // Get listeners for this event type
     const listeners = this.eventListeners.get(eventType);
@@ -88,23 +95,6 @@ export class DefaultEventPlugin extends EventPlugin {
       });
     }
   }
-
-  /**
-   * Helper to get the event type string from a generic type parameter
-   */
-  private getEventType<T extends VyuhEvent>(): string {
-    // For simplicity, we'll use the event name as the type
-    // In a real implementation, you might use a more sophisticated approach
-    return 'event';
-  }
-
-  /**
-   * Helper to get the event type string from an event instance
-   */
-  private getEventTypeFromEvent(event: VyuhEvent): string {
-    // Use the event name as the type
-    return event.name;
-  }
 }
 
 /**
@@ -114,7 +104,4 @@ export function createEvent<T = void>(name: string, data?: T): VyuhEvent<T> {
   return new VyuhEvent<T>(name, data);
 }
 
-/**
- * System ready event
- */
-export const systemReadyEvent = new VyuhEvent('vyuh.event.systemReady');
+export const SystemReadyEventType = 'vyuh.event.systemReady';

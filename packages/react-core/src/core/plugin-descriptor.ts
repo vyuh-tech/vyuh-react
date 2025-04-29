@@ -44,11 +44,11 @@ export class PluginDescriptor {
   /**
    * System default plugins
    */
-  static readonly system = {
+  static readonly system = new PluginDescriptor({
     content: new NoOpContentPlugin(),
     telemetry: new DefaultTelemetryPlugin(),
     event: new DefaultEventPlugin(),
     navigation: new NoOpNavigationPlugin(),
     auth: new DefaultAuthPlugin(),
-  };
+  });
 }

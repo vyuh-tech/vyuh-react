@@ -1,3 +1,7 @@
+linkWorkspacePackages: deep
+saveWorkspaceProtocol: false
+savePrefix: '^'
+
 packages:
   - apps/*
   - packages/*
@@ -8,3 +12,4 @@ onlyBuiltDependencies:
   - scrollmirror
   - sharp
   - yarn
+

@@ -5,7 +5,8 @@ import { PlatformComponentBuilder } from '@/core/platform-component-builder';
 import { InitState } from '@/core/platform-types';
 import { PluginDescriptor } from '@/core/plugin-descriptor';
 import { useVyuhStore } from '@/hooks/use-vyuh';
-import { systemReadyEvent } from '@/plugins/event/default-event-plugin';
+import { SystemReadyEventType } from '@/plugins/event/default-event-plugin';
+import { VyuhEvent } from '@/plugins/event/event-plugin';
 
 /**
  * Bootstrap options for the Vyuh platform
@@ -64,7 +65,7 @@ export async function bootstrap({
     store.setInitState(InitState.ready);
 
     // Dispatch system ready event
-    store.plugins.event.emit(systemReadyEvent);
+    store.plugins.event.emit(new VyuhEvent(SystemReadyEventType));
   } catch (error) {
     store.setInitState(InitState.error);
     store.setError(error instanceof Error ? error : new Error(String(error)));

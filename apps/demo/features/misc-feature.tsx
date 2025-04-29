@@ -1,4 +1,9 @@
-import { FeatureDescriptor, TypeDescriptor } from '@vyuh/react-core';
+import {
+  FeatureDescriptor,
+  SystemReadyEventType,
+  TypeDescriptor,
+  useVyuhStore,
+} from '@vyuh/react-core';
 import { ContentExtensionDescriptor } from '@vyuh/react-extension-content';
 import {
   APIConfiguration,
@@ -99,4 +104,11 @@ export const misc = new FeatureDescriptor({
       ],
     }),
   ],
+  async init() {
+    const { plugins } = useVyuhStore.getState();
+
+    plugins.event.on(SystemReadyEventType, () =>
+      console.log('System is ready'),
+    );
+  },
 });
