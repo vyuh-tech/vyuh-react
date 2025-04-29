@@ -1,5 +1,12 @@
 # @vyuh/react-extension-content
 
+## 0.5.2
+
+### Patch Changes
+
+- Fixed an error message
+  - @vyuh/react-core@0.5.2
+
 ## 0.5.1
 
 ### Patch Changes
