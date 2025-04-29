@@ -76,6 +76,11 @@ import {
   TestimonialsDescriptor,
   TestimonialsSchemaBuilder,
 } from './content/testimonials';
+import {
+  defaultAccordionLayout,
+  AccordionDescriptor,
+  AccordionSchemaBuilder,
+} from './content/accordion';
 import { fullPageRouteLayout } from './extensions';
 
 export const marketing = new FeatureDescriptor({
@@ -86,6 +91,9 @@ export const marketing = new FeatureDescriptor({
   contents: [
     new HeroDescriptor({
       layouts: [defaultHeroLayout],
+    }),
+    new AccordionDescriptor({
+      layouts: [defaultAccordionLayout],
     }),
     new FeatureSectionDescriptor({
       layouts: [defaultFeatureLayout],
@@ -130,6 +138,7 @@ export const marketing = new FeatureDescriptor({
       layouts: [fullPageRouteLayout],
       regionItems: [
         { type: BannerDescriptor.schemaName },
+        { type: AccordionDescriptor.schemaName },
         { type: HeaderDescriptor.schemaName },
         { type: HeroDescriptor.schemaName },
         { type: LogoDescriptor.schemaName },
@@ -148,6 +157,7 @@ export const marketing = new FeatureDescriptor({
   ],
   contentSchemaBuilders: [
     new BannerSchemaBuilder(),
+    new AccordionSchemaBuilder(),
     new HeaderSchemaBuilder(),
     new HeroSchemaBuilder(),
     new LogoSchemaBuilder(),

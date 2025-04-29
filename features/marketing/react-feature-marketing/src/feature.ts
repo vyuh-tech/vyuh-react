@@ -1,4 +1,5 @@
 import { BannerContentBuilder } from '@/content/banner/banner-builder';
+import { AccordionContentBuilder } from '@/content/accordion/accordion-builder';
 import { BentoContentBuilder } from '@/content/bento/bento-builder';
 import { CTAContentBuilder } from '@/content/cta/cta-builder';
 import { FAQContentBuilder } from '@/content/faq/faq-builder';
@@ -51,6 +52,7 @@ export const marketing = new FeatureDescriptor({
       contentBuilders: [
         new HeroContentBuilder(),
         new FeatureContentBuilder(),
+        new AccordionContentBuilder(),
         new BannerContentBuilder(),
         new FAQContentBuilder(),
         new CTAContentBuilder(),
