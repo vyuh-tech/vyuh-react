@@ -1,5 +1,11 @@
 # @vyuh/react-plugin-content-provider-sanity
 
+## 0.5.3
+
+### Patch Changes
+
+- @vyuh/react-core@0.5.3
+
 ## 0.5.2
 
 ### Patch Changes

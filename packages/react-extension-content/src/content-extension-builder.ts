@@ -186,7 +186,7 @@ Make sure you have registered a ContentBuilder for this schema type.
       throw new Error(
         `
 No Item found with schemaType: ${schemaType}.
-Make sure you have registered a TypeDescriptor<${itemType.name}> for this schema type.
+Make sure you have registered a TypeDescriptor for this schema type.
       `.trim(),
       );
     }
