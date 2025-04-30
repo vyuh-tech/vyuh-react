@@ -9,7 +9,12 @@ import {
   CardTitle,
 } from '@/ui/components/card';
 import { cn } from '@/ui/lib/utils';
-import { executeAction, LayoutConfiguration, TypeDescriptor, useVyuh } from '@vyuh/react-core';
+import {
+  executeAction,
+  LayoutConfiguration,
+  TypeDescriptor,
+  useVyuh,
+} from '@vyuh/react-core';
 import React from 'react';
 
 /**
@@ -89,7 +94,7 @@ const CardView: React.FC<CardRendererProps> = ({ content }) => {
   // Otherwise render the standard card layout
   return (
     <ShadcnCard
-      className={cn('vfs:h-full vfs:border-[6px] vfs:border-neutral-100', {
+      className={cn('vfs:border-[6px] vfs:border-neutral-100', {
         'vfs:cursor-pointer': content.action,
       })}
       onClick={() => content.action && executeAction(content.action)}

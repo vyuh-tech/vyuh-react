@@ -1,6 +1,6 @@
 {
   "name": "@vyuh/react-feature-system",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "System feature package for Vyuh React framework",
   "type": "module",
   "scripts": {
@@ -38,8 +38,8 @@
     "@portabletext/react": "^3.2.1",
     "@radix-ui/react-accordion": "^1.2.8",
     "@radix-ui/react-slot": "^1.2.0",
-    "@vyuh/react-core": "^0.5.4",
-    "@vyuh/react-extension-content": "^0.5.4",
+    "@vyuh/react-core": "^0.5.5",
+    "@vyuh/react-extension-content": "^0.5.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.6.0",

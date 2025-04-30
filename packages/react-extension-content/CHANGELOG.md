@@ -1,5 +1,11 @@
 # @vyuh/react-extension-content
 
+## 0.5.5
+
+### Patch Changes
+
+- @vyuh/react-core@0.5.5
+
 ## 0.5.4
 
 ### Patch Changes
