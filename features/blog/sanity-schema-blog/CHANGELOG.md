@@ -1,5 +1,11 @@
 # @vyuh/sanity-schema-blog
 
+## 0.5.6
+
+### Patch Changes
+
+- Exposing actions and conditions
+
 ## 0.5.5
 
 ## 0.5.4

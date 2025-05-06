@@ -1,5 +1,15 @@
 # @vyuh/react-feature-marketing
 
+## 0.5.6
+
+### Patch Changes
+
+- Exposing actions and conditions
+- Updated dependencies
+  - @vyuh/react-core@0.5.6
+  - @vyuh/react-extension-content@0.5.6
+  - @vyuh/react-feature-system@0.5.6
+
 ## 0.5.5
 
 ### Patch Changes

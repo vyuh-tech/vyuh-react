@@ -1,5 +1,11 @@
 # @vyuh/react-core
 
+## 0.5.6
+
+### Patch Changes
+
+- Exposing actions and conditions
+
 ## 0.5.5
 
 ## 0.5.4
