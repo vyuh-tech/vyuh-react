@@ -1,5 +1,15 @@
 # @vyuh/react-feature-auth
 
+## 0.5.7
+
+### Patch Changes
+
+- Fixing API calls to sanity
+- Updated dependencies
+  - @vyuh/react-extension-content@0.5.7
+  - @vyuh/react-feature-system@0.5.7
+  - @vyuh/react-core@0.5.7
+
 ## 0.5.6
 
 ### Patch Changes

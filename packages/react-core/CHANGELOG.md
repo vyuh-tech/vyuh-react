@@ -1,5 +1,11 @@
 # @vyuh/react-core
 
+## 0.5.7
+
+### Patch Changes
+
+- Fixing API calls to sanity
+
 ## 0.5.6
 
 ### Patch Changes

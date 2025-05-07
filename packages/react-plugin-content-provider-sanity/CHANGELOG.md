@@ -1,5 +1,13 @@
 # @vyuh/react-plugin-content-provider-sanity
 
+## 0.5.7
+
+### Patch Changes
+
+- Fixing API calls to sanity
+- Updated dependencies
+  - @vyuh/react-core@0.5.7
+
 ## 0.5.6
 
 ### Patch Changes

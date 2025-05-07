@@ -32,7 +32,8 @@ export class SanityLiveContentProvider implements LiveContentProvider {
 
     const isDraftMode =
       options.includeDrafts || this.config.perspective === 'drafts';
-    const source = getQueryState<T>(this.sanityInstance, query, {
+    const source = getQueryState<T>(this.sanityInstance, {
+      query,
       params,
       perspective: isDraftMode ? 'drafts' : 'published',
     });

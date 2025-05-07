@@ -65,7 +65,8 @@ export class SanityContentProvider extends ContentProvider {
   ): Promise<T | undefined> {
     const query = `*[_id == $id][0]`;
     const params = { id };
-    return resolveQuery<T>(this.sanityInstance, query, {
+    return resolveQuery<T>(this.sanityInstance, {
+      query,
       params,
       useCdn: this.config.useCdn,
       perspective: this.config.perspective,
@@ -79,7 +80,8 @@ export class SanityContentProvider extends ContentProvider {
       useCache?: boolean;
     },
   ): Promise<T | undefined> {
-    const result = await resolveQuery<T>(this.sanityInstance, query, {
+    const result = await resolveQuery<T>(this.sanityInstance, {
+      query,
       params: options.params,
       useCdn: this.config.useCdn,
       perspective: this.config.perspective,
@@ -95,7 +97,8 @@ export class SanityContentProvider extends ContentProvider {
       useCache?: boolean;
     },
   ): Promise<T[] | undefined> {
-    const results = await resolveQuery<T[]>(this.sanityInstance, query, {
+    const results = await resolveQuery<T[]>(this.sanityInstance, {
+      query,
       params: options?.params,
       useCdn: this.config.useCdn,
       perspective: this.config.perspective,
