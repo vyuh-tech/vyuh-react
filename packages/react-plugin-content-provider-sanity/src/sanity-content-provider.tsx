@@ -39,6 +39,7 @@ export class SanityContentProvider extends ContentProvider {
     this.sanityInstance = createSanityInstance({
       projectId: config.projectId,
       dataset: config.dataset,
+      perspective: config.perspective,
       auth: {
         token: config.token,
       },

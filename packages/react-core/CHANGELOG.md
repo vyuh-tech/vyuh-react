@@ -1,5 +1,11 @@
 # @vyuh/react-core
 
+## 0.5.8
+
+### Patch Changes
+
+- Package updates
+
 ## 0.5.7
 
 ### Patch Changes
