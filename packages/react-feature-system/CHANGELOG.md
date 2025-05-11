@@ -1,5 +1,13 @@
 # @vyuh/react-feature-system
 
+## 0.5.9
+
+### Patch Changes
+
+- Adding the missing DocumentViewDescriptor
+  - @vyuh/react-core@0.5.9
+  - @vyuh/react-extension-content@0.5.9
+
 ## 0.5.8
 
 ### Patch Changes

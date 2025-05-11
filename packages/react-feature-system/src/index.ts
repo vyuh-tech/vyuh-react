@@ -30,6 +30,9 @@ export * from './content/video-player/video-player-descriptor';
 
 export * from './content/api-content/api-content';
 
+export * from './content/document-view/document-view';
+export * from './content/document-view/document-view-descriptor';
+
 export * from './action/navigate-action';
 export * from './action/open-url-action';
 
