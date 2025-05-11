@@ -1,5 +1,15 @@
 # @vyuh/react-plugin-content-provider-sanity
 
+## 0.6.0
+
+### Minor Changes
+
+- Adding support for Custom Document rendering
+
+### Patch Changes
+
+- @vyuh/react-core@0.6.0
+
 ## 0.5.9
 
 ### Patch Changes

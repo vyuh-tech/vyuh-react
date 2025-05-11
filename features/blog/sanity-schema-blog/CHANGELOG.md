@@ -1,5 +1,11 @@
 # @vyuh/sanity-schema-blog
 
+## 0.6.0
+
+### Minor Changes
+
+- Adding support for Custom Document rendering
+
 ## 0.5.9
 
 ## 0.5.8

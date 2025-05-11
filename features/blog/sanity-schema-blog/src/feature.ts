@@ -16,6 +16,7 @@ import {
   BlogPostSchemaBuilder,
   BlogPostSummaryDescriptor,
 } from './content/blog-post-summary';
+import { blogQueryConfig } from './content/blog-query-config';
 import { blogAuthor } from './documents/blog-author';
 import { blogCategory } from './documents/blog-category';
 import { blogPost } from './documents/blog-post';
@@ -32,6 +33,7 @@ export const blog = new FeatureDescriptor({
         { type: blogCategory.name },
         { type: blogAuthor.name },
       ],
+      queryConfigurations: [blogQueryConfig],
     }),
     new BlogGroupDescriptor({
       layouts: [defaultBlogGroupLayout],

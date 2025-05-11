@@ -1,7 +1,6 @@
-import { DOCUMENT_SCHEMA_TYPE } from '@/content/document/document';
 import { TypeDescriptor } from '@vyuh/react-core';
 import { ContentDescriptor } from '@vyuh/react-extension-content';
-import { QueryConfiguration } from './document-view';
+import { DOCUMENT_VIEW_SCHEMA_TYPE, QueryConfiguration } from './document-view';
 
 /**
  * Descriptor for DocumentView content
@@ -18,7 +17,7 @@ export class DocumentViewDescriptor extends ContentDescriptor {
     layouts?: TypeDescriptor<any>[];
   }) {
     super({
-      schemaType: DOCUMENT_SCHEMA_TYPE,
+      schemaType: DOCUMENT_VIEW_SCHEMA_TYPE,
       title: 'Document View',
     });
 

@@ -1,5 +1,7 @@
 # @vyuh/sanity-schema-marketing
 
+## 0.6.0
+
 ## 0.5.9
 
 ## 0.5.8

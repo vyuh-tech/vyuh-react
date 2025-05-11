@@ -60,7 +60,7 @@ export class SanityContentProvider extends ContentProvider {
 
   async fetchById<T>(
     id: string,
-    options: {
+    options?: {
       useCache?: boolean;
     },
   ): Promise<T | undefined> {
@@ -76,14 +76,14 @@ export class SanityContentProvider extends ContentProvider {
 
   async fetchSingle<T>(
     query: string,
-    options: {
+    options?: {
       params?: Record<string, any>;
       useCache?: boolean;
     },
   ): Promise<T | undefined> {
     const result = await resolveQuery<T>(this.sanityInstance, {
       query,
-      params: options.params,
+      params: options?.params,
       useCdn: this.config.useCdn,
       perspective: this.config.perspective,
     });

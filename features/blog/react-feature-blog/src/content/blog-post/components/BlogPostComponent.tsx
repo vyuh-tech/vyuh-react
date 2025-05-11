@@ -52,10 +52,7 @@ export const BlogPostComponent: React.FC<BlogPostComponentProps> = ({
     >
       {/* Hero section with featured image */}
       {content.featuredImage && (
-        <BlogPostHero
-          content={content}
-          layout={layout}
-        />
+        <BlogPostHero content={content} layout={layout} />
       )}
 
       {/* Main content */}
@@ -68,16 +65,10 @@ export const BlogPostComponent: React.FC<BlogPostComponentProps> = ({
       >
         {/* If no featured image, show title here */}
         {!content.featuredImage && (
-          <BlogPostHeader
-            content={content}
-            layout={layout}
-          />
+          <BlogPostHeader content={content} layout={layout} />
         )}
 
-        {/* Content */}
-        <BlogPostContent
-          content={content}
-        />
+        {content.content && <BlogPostContent content={content} />}
 
         {/* Author bio */}
         {content.author && (

@@ -11,6 +11,7 @@ import {
   DOCUMENT_VIEW_SCHEMA_TYPE,
   DocumentLoadStrategy,
   DocumentView,
+  QueryConfiguration,
 } from './document-view';
 
 /**
@@ -38,15 +39,17 @@ export class DefaultDocumentViewLayout extends LayoutConfiguration<DocumentView>
 /**
  * Document view component props
  */
-interface DocumentViewComponentProps {
+export interface DocumentViewComponentProps {
   content: DocumentView;
+  itemLayout?: LayoutConfiguration<ContentItem>;
 }
 
 /**
  * Document view component
  */
-const DocumentViewComponent: React.FC<DocumentViewComponentProps> = ({
+export const DocumentViewComponent: React.FC<DocumentViewComponentProps> = ({
   content,
+  itemLayout,
 }) => {
   const { plugins } = useVyuh();
 
@@ -54,6 +57,8 @@ const DocumentViewComponent: React.FC<DocumentViewComponentProps> = ({
   const fetchContent: () => Promise<
     ContentItem | ContentItem[] | undefined
   > = async () => {
+    const schemaType = plugins.content.provider.schemaType(content);
+
     switch (content.loadStrategy) {
       case DocumentLoadStrategy.REFERENCE:
         const ref = content.reference
@@ -63,18 +68,28 @@ const DocumentViewComponent: React.FC<DocumentViewComponentProps> = ({
         const documentId = ref;
         if (!documentId) {
           return Promise.reject(
-            new Error(`No valid Document ID set for ${content.schemaType}`),
+            new Error(`No valid Document ID set for ${schemaType}`),
           );
         }
 
         return plugins.content.provider.fetchById<DocumentView>(documentId);
 
       case DocumentLoadStrategy.QUERY:
-        const query = content.query?.buildQuery({});
+        const queryConfig = QueryConfiguration.fromJson(content);
+
+        if (!queryConfig) {
+          return Promise.reject(
+            new Error(
+              `No Document query configuration found for document type: ${schemaType}`,
+            ),
+          );
+        }
+
+        const query = queryConfig.buildQuery();
         if (!query) {
           return Promise.reject(
             new Error(
-              `Document query is null for document type: ${content.schemaType}`,
+              `Could not build a Document query for document type: ${schemaType}`,
             ),
           );
         }
@@ -96,7 +111,19 @@ const DocumentViewComponent: React.FC<DocumentViewComponentProps> = ({
       return <div className="vfs:p-4">No document found</div>;
     }
 
-    return plugins.content.render(document);
+    if (Array.isArray(document)) {
+      return (
+        <div className="vfs:p-4">
+          <div className="vfs:space-y-4">
+            {document.map((item, index) => (
+              <div key={index}>{plugins.content.render(item, itemLayout)}</div>
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    return plugins.content.render(document, itemLayout);
   };
 
   return (

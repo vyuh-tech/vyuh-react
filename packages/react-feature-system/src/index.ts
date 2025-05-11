@@ -32,6 +32,10 @@ export * from './content/api-content/api-content';
 
 export * from './content/document-view/document-view';
 export * from './content/document-view/document-view-descriptor';
+export {
+  DocumentViewComponent,
+  type DocumentViewComponentProps,
+} from './content/document-view/default-document-view-layout';
 
 export * from './action/navigate-action';
 export * from './action/open-url-action';

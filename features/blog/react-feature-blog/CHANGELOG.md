@@ -1,5 +1,18 @@
 # @vyuh/react-feature-blog
 
+## 0.6.0
+
+### Minor Changes
+
+- Adding support for Custom Document rendering
+
+### Patch Changes
+
+- Updated dependencies
+  - @vyuh/react-feature-system@0.6.0
+  - @vyuh/react-core@0.6.0
+  - @vyuh/react-extension-content@0.6.0
+
 ## 0.5.9
 
 ### Patch Changes

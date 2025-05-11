@@ -1,4 +1,9 @@
-import { ContentItem, ObjectReference, SchemaItem } from '@vyuh/react-core';
+import {
+  ContentItem,
+  ObjectReference,
+  SchemaItem,
+  useVyuhStore,
+} from '@vyuh/react-core';
 
 /**
  * Schema type for DocumentView content
@@ -16,11 +21,44 @@ export enum DocumentLoadStrategy {
 /**
  * Query configuration interface
  */
-export interface QueryConfiguration extends SchemaItem {
+export abstract class QueryConfiguration implements SchemaItem {
+  readonly schemaType: string;
+  readonly title?: string;
+
+  protected constructor(props: { schemaType: string; title?: string }) {
+    this.schemaType = props.schemaType;
+    this.title = props.title;
+  }
+
   /**
    * Build a query string from the configuration
    */
-  buildQuery(context: any): string | null;
+  abstract buildQuery(): string | null;
+
+  static fromJson(json: DocumentView): QueryConfiguration | undefined {
+    const config = Array.isArray(json.query) ? json.query[0] : undefined;
+
+    if (!config) {
+      return undefined;
+    }
+
+    const { plugins } = useVyuhStore.getState();
+    const schemaType = config
+      ? plugins.content.provider.schemaType(config)
+      : undefined;
+
+    const TD = schemaType
+      ? plugins.content.getItem(QueryConfiguration, schemaType)
+      : undefined;
+
+    if (TD) {
+      return new TD.fromJson(config);
+    }
+
+    throw new Error(
+      `No Query Configuration found for schemaType: ${schemaType}`,
+    );
+  }
 }
 
 /**

@@ -42,7 +42,7 @@ export interface BlogPost extends ContentItem {
   /**
    * The main content of the blog post
    */
-  readonly content: PortableText;
+  readonly content?: PortableText;
 
   /**
    * The author of the blog post
