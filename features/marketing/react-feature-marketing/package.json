@@ -1,6 +1,6 @@
 {
   "name": "@vyuh/react-feature-marketing",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "The Marketing feature package for the Vyuh React framework",
   "type": "module",
   "scripts": {
@@ -31,9 +31,9 @@
     "react-dom": "^19.0.0"
   },
   "dependencies": {
-    "@vyuh/react-core": "^0.6.0",
-    "@vyuh/react-extension-content": "^0.6.0",
-    "@vyuh/react-feature-system": "^0.6.0",
+    "@vyuh/react-core": "^0.6.1",
+    "@vyuh/react-extension-content": "^0.6.1",
+    "@vyuh/react-feature-system": "^0.6.1",
     "lucide-react": "^0.509.0",
     "zustand": "^5.0.4"
   },
@@ -61,9 +61,7 @@
     "dist"
   ],
   "exports": {
-    ".": {
-      "import": "./src/index.ts"
-    },
+    ".": "./src/index.ts",
     "./styles.css": "./src/styles.css"
   },
   "publishConfig": {
@@ -72,7 +70,8 @@
       ".": {
         "types": "./dist/index.d.ts",
         "import": "./dist/index.js"
-      }
+      },
+      "./styles.css": "./dist/styles.css"
     }
   }
 }

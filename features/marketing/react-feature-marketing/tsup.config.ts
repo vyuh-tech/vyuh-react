@@ -10,6 +10,7 @@ export default defineConfig({
   treeshake: true,
   minify: true,
   external: ['react', 'react-dom'],
+  injectStyle: true,
   esbuildOptions(options) {
     options.banner = {
       js: '// @vyuh/react-feature-marketing - Marketing feature package for Vyuh React framework',

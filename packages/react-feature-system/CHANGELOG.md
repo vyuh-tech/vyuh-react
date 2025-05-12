@@ -1,5 +1,12 @@
 # @vyuh/react-feature-system
 
+## 0.6.1
+
+### Patch Changes
+
+- @vyuh/react-core@0.6.1
+- @vyuh/react-extension-content@0.6.1
+
 ## 0.6.0
 
 ### Minor Changes
