@@ -1,6 +1,6 @@
 {
   "name": "@vyuh/sanity-schema-marketing",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "The Sanity schema package for the Marketing content blocks",
   "type": "module",
   "scripts": {
@@ -53,12 +53,6 @@
     }
   },
   "publishConfig": {
-    "access": "public",
-    "exports": {
-      ".": {
-        "types": "./dist/index.d.ts",
-        "import": "./dist/index.js"
-      }
-    }
+    "access": "public"
   }
 }

@@ -1,11 +1,10 @@
+import { FeatureDescriptor } from '@vyuh/sanity-schema-core';
+import { RouteDescriptor } from '@vyuh/sanity-schema-system';
 import {
-  BuiltContentSchemaBuilder,
-  FeatureDescriptor,
-} from '@vyuh/sanity-schema-core';
-import {
-  DocumentDescriptor,
-  RouteDescriptor,
-} from '@vyuh/sanity-schema-system';
+  AccordionDescriptor,
+  AccordionSchemaBuilder,
+  defaultAccordionLayout,
+} from './content/accordion';
 import {
   BannerDescriptor,
   BannerSchemaBuilder,
@@ -76,11 +75,6 @@ import {
   TestimonialsDescriptor,
   TestimonialsSchemaBuilder,
 } from './content/testimonials';
-import {
-  defaultAccordionLayout,
-  AccordionDescriptor,
-  AccordionSchemaBuilder,
-} from './content/accordion';
 import { fullPageRouteLayout } from './extensions';
 
 export const marketing = new FeatureDescriptor({

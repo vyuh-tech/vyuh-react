@@ -1,6 +1,6 @@
 {
   "name": "@vyuh/react-feature-auth",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "The Authentication feature package for the Vyuh React framework",
   "type": "module",
   "scripts": {
@@ -32,9 +32,9 @@
     "react-dom": "^19.0.0"
   },
   "dependencies": {
-    "@vyuh/react-core": "^0.6.1",
-    "@vyuh/react-extension-content": "^0.6.1",
-    "@vyuh/react-feature-system": "^0.6.1",
+    "@vyuh/react-core": "^0.6.2",
+    "@vyuh/react-extension-content": "^0.6.2",
+    "@vyuh/react-feature-system": "^0.6.2",
     "lucide-react": "^0.509.0"
   },
   "devDependencies": {
