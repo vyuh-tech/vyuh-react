@@ -1,5 +1,13 @@
 # @vyuh/react-feature-blog
 
+## 0.6.3
+
+### Patch Changes
+
+- @vyuh/react-core@0.6.3
+- @vyuh/react-extension-content@0.6.3
+- @vyuh/react-feature-system@0.6.3
+
 ## 0.6.2
 
 ### Patch Changes
